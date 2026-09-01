@@ -424,3 +424,68 @@ section.chamada p{
 	box-shadow: 0 10px 24px rgba(0,0,0,0.22);
 }
 /******/
+
+
+/**Secao do mosaico!*/
+section.mosaico{
+	background-color: var(--cor-fundo-alt);
+	padding: var(--espaco-secao) 0;
+}
+
+.mosaico-intro{
+	max-width: 760px;
+	margin: 0 auto 40px;
+	text-align: center;
+}
+
+.mosaico-intro h2{
+	margin-top: 10px;
+}
+
+.flex-mosaico{
+	display: flex;
+	align-items: stretch;
+	overflow: hidden;
+	border-radius: var(--raio);
+	box-shadow: var(--sombra-suave);
+	background-color: var(--cor-fundo);
+}
+
+.flex-mosaico:not(:last-child){
+	margin-bottom: 24px;
+}
+
+/* linhas pares entram com a imagem à direita */
+.flex-mosaico.invertido .item-1-mosaico{
+	order: 2;
+}
+
+.item-1-mosaico{
+	width: 57%;
+	min-height: 380px;
+	background-position: center;
+	background-size: cover;
+	transition: transform 0.6s ease;
+}
+
+.flex-mosaico:hover .item-1-mosaico{
+	transform: scale(1.04);
+}
+
+.item-2-mosaico{
+	width: 43%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: clamp(32px, 4vw, 52px);
+}
+
+.item-2-mosaico h3{
+	margin: 10px 0 12px;
+	font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+}
+
+.item-2-mosaico p{
+	color: var(--cor-texto-suave);
+}
+/******/
