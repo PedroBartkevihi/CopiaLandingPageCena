@@ -539,3 +539,57 @@ footer small{
 	font-size: 0.8rem;
 }
 /******/
+
+
+/**Estados de foco, hover e movimento!*/
+::selection{
+	background-color: var(--cor-primaria-clara);
+	color: #fff;
+}
+
+::placeholder{
+	color: #9aa7ac;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.menu a:focus-visible{
+	outline: 2px solid var(--cor-destaque-escura);
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+
+.flex-mosaico{
+	transition: box-shadow var(--transicao), transform var(--transicao);
+}
+
+.flex-mosaico:hover{
+	transform: translateY(-3px);
+	box-shadow: var(--sombra);
+}
+
+.logo-2,
+.logo-1{
+	transition: opacity var(--transicao);
+}
+
+.logo:hover .logo-1{
+	opacity: 1;
+}
+
+/* respeita quem prefere menos animacao */
+@media (prefers-reduced-motion: reduce){
+	html{
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after{
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+	}
+}
+/******/
