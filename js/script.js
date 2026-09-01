@@ -103,6 +103,9 @@
 			}, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
 
 			alvos.forEach(function(el){ observador.observe(el); });
+
+			/* rede de seguranca: nada fica invisivel se o observer nao disparar */
+			setTimeout(revelaTudo, 4000);
 		}catch(erro){
 			revelaTudo();
 		}
