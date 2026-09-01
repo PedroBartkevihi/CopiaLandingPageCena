@@ -1,5 +1,7 @@
 # Côte d'Azur ville — Landing Page (projeto de estudo)
 
+**Ver online:** https://pedrobartkevihi.github.io/CopiaLandingPageCena/
+
 Recriação **para fins de estudo** de uma landing page de divulgação do
 empreendimento **Côte d'Azur ville**, da **Cena Construção e Incorporação**
 (Florianópolis/SC).
