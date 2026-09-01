@@ -108,4 +108,15 @@
 		}
 	}
 
+
+	/* Formulario: feedback simples de envio (nao ha back-end neste projeto) */
+	var form = document.querySelector(".form-container form");
+
+	if(form){
+		form.addEventListener("submit", function(e){
+			e.preventDefault();
+			form.innerHTML = '<p class="form-ok">Recebemos seus dados. Em breve entraremos em contato!</p>';
+		});
+	}
+
 })();

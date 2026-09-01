@@ -302,6 +302,13 @@ section.cover-form{
 	color: var(--cor-texto-suave);
 }
 
+.form-container .form-ok{
+	padding: 20px 4px;
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--cor-primaria);
+}
+
 .form-wraper:not(:first-child){
 	margin-top: 18px;
 }
