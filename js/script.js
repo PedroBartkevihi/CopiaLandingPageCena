@@ -1,8 +1,3 @@
-/*
-	Côte d'Azur ville - interações da landing page
-	Feito em vanilla JS, sem dependências externas.
-*/
-
 (function(){
 	"use strict";
 
@@ -12,7 +7,6 @@
 	var linksMenu = document.querySelectorAll(".menu a");
 
 
-	/* Menu mobile: abre e fecha o dropdown */
 	function abreMenu(){
 		menu.classList.add("aberto");
 		toggle.classList.add("ativo");
@@ -36,26 +30,22 @@
 			}
 		});
 
-		/* fecha ao clicar em um link */
 		linksMenu.forEach(function(link){
 			link.addEventListener("click", fechaMenu);
 		});
 
-		/* fecha com Esc */
 		document.addEventListener("keydown", function(e){
 			if(e.key === "Escape"){
 				fechaMenu();
 			}
 		});
 
-		/* fecha ao clicar fora do menu */
 		document.addEventListener("click", function(e){
 			if(!menu.contains(e.target) && !toggle.contains(e.target)){
 				fechaMenu();
 			}
 		});
 
-		/* volta ao normal quando a tela cresce */
 		window.addEventListener("resize", function(){
 			if(window.innerWidth > 880){
 				fechaMenu();
@@ -64,7 +54,6 @@
 	}
 
 
-	/* Sombra no header ao rolar a página */
 	function atualizaHeader(){
 		if(window.scrollY > 8){
 			header.classList.add("rolagem");
@@ -79,7 +68,6 @@
 	}
 
 
-	/* Revela os elementos [data-revelar] conforme entram na tela */
 	var alvos = document.querySelectorAll("[data-revelar]");
 	var semAnimacao = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -87,32 +75,30 @@
 		alvos.forEach(function(el){ el.classList.add("visivel"); });
 	}
 
-	if(!alvos.length){
-		/* nada a fazer */
-	}else if(semAnimacao || !("IntersectionObserver" in window)){
-		revelaTudo();
-	}else{
-		try{
-			var observador = new IntersectionObserver(function(entradas){
-				entradas.forEach(function(entrada){
-					if(entrada.isIntersecting){
-						entrada.target.classList.add("visivel");
-						observador.unobserve(entrada.target);
-					}
-				});
-			}, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
-
-			alvos.forEach(function(el){ observador.observe(el); });
-
-			/* rede de seguranca: nada fica invisivel se o observer nao disparar */
-			setTimeout(revelaTudo, 4000);
-		}catch(erro){
+	if(alvos.length){
+		if(semAnimacao || !("IntersectionObserver" in window)){
 			revelaTudo();
+		}else{
+			try{
+				var observador = new IntersectionObserver(function(entradas){
+					entradas.forEach(function(entrada){
+						if(entrada.isIntersecting){
+							entrada.target.classList.add("visivel");
+							observador.unobserve(entrada.target);
+						}
+					});
+				}, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+
+				alvos.forEach(function(el){ observador.observe(el); });
+
+				setTimeout(revelaTudo, 4000);
+			}catch(erro){
+				revelaTudo();
+			}
 		}
 	}
 
 
-	/* Formulario: feedback simples de envio (nao ha back-end neste projeto) */
 	var form = document.querySelector(".form-container form");
 
 	if(form){
