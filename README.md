@@ -1,19 +1,20 @@
-# Côte d'Azur ville — Landing Page
+# Côte d'Azur ville — Landing Page (projeto de estudo)
 
-Landing page de divulgação do empreendimento fictício **Côte d'Azur ville**, da
-construtora **Cena Construção e Incorporação**.
+Recriação **para fins de estudo** de uma landing page de divulgação do
+empreendimento **Côte d'Azur ville**, da **Cena Construção e Incorporação**
+(Florianópolis/SC).
 
-Esta é uma versão modernizada de um projeto de curso feito originalmente só com
-HTML e CSS. O objetivo foi atualizar o visual (layout, tipografia, cores,
-espaçamentos, botões, cards, responsividade e pequenas interações) mantendo a
-mesma ideia, o mesmo conteúdo e o estilo de escrita do código original.
+Partindo de um exercício de curso feito só com HTML e CSS, o objetivo aqui foi
+modernizar o visual — layout, tipografia, cores, espaçamentos, botões, cards,
+responsividade e pequenas interações — mantendo a mesma ideia, o mesmo conteúdo
+e o estilo de escrita do código original.
 
 ## Tecnologias
 
 - HTML5
 - CSS3 (variáveis em `:root`, flexbox, `clamp()` e media queries)
 - JavaScript (vanilla, sem dependências)
-- [Google Fonts](https://fonts.google.com/) — Open Sans e Playfair Display
+- [Google Fonts](https://fonts.google.com/) — Open Sans (Apache 2.0) e Playfair Display (OFL)
 
 Sem frameworks e sem etapa de build: é só abrir o `index.html`.
 
@@ -40,13 +41,14 @@ Projeto2/
 2. **Capa** — imagem, chamada principal e formulário de contato.
 3. **Chamada** — faixa de destaque com seta e botão para o formulário.
 4. **Estrutura (mosaico)** — quatro cards alternando imagem e texto.
-5. **Rodapé** — logo, slogan, links e copyright.
+5. **Rodapé** — logo, slogan e links.
 
 ## Interações (`js/script.js`)
 
 - Abre/fecha o menu no mobile (com `Esc`, clique fora e clique em link).
 - Sombra no header ao rolar a página.
 - Elementos `[data-revelar]` surgem ao entrar na tela (`IntersectionObserver`).
+- Feedback ao enviar o formulário (não há back-end).
 - Respeita `prefers-reduced-motion` e funciona sem JavaScript.
 
 ## Como executar
@@ -60,7 +62,17 @@ python -m http.server 8080
 
 E acesse `http://localhost:8080`.
 
-## Créditos
+## Uso educacional e direitos
 
-Projeto base desenvolvido durante o curso de Front-End. Imagens usadas apenas
-para fins de estudo.
+Este repositório é **apenas um exercício de front-end, sem fins comerciais**.
+
+- Não possui qualquer vínculo, patrocínio ou aprovação da **Cena Construção e
+  Incorporação** nem do empreendimento **Côte d'Azur ville**.
+- As marcas, os logotipos, o slogan e as imagens (fotos e renders — parte deles
+  com marca d'água de terceiros, como **OFICINA3D**) pertencem aos seus
+  respectivos titulares e aparecem aqui só a título ilustrativo, para estudo.
+- O código-fonte (HTML, CSS e JavaScript) é de autoria de **Pedro Farias** e
+  pode ser reaproveitado livremente.
+- Para uso como portfólio público, o recomendado é **trocar os logotipos e as
+  imagens** por material próprio ou de bancos livres (ex.: Unsplash, Pexels).
+- Caso algum detentor de direitos entre em contato, o conteúdo será removido.
