@@ -42,7 +42,8 @@ body{
 	line-height: 1.65;
 	color: var(--cor-texto);
 	background-color: var(--cor-fundo);
-	overflow-x: hidden;
+	/* clip (e nao hidden) evita overflow lateral sem quebrar o position:sticky do header */
+	overflow-x: clip;
 }
 
 img{
@@ -351,5 +352,75 @@ section.cover-form{
 
 .form-container form input[type=submit]:active{
 	transform: translateY(0);
+}
+/******/
+
+
+/**Secao de chamada!*/
+section.chamada{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	background-color: var(--cor-primaria);
+	padding: var(--espaco-secao) 0;
+}
+
+/* seta central sobreposta no topo da secao */
+.icone-seta{
+	position: absolute;
+	left: 50%;
+	top: -32px;
+	transform: translateX(-50%);
+	width: 64px;
+	height: 64px;
+	background-size: 100% 100%;
+	background-image: url('../imagens/arrow.png');
+	filter: drop-shadow(0 6px 12px rgba(7,42,58,0.35));
+	animation: sobe-desce 2.4s ease-in-out infinite;
+}
+
+@keyframes sobe-desce{
+	0%, 100%{ transform: translateX(-50%) translateY(0); }
+	50%{ transform: translateX(-50%) translateY(6px); }
+}
+
+section.chamada h2{
+	width: 98%;
+	max-width: 700px;
+	display: inline-block;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	font-weight: normal;
+}
+
+section.chamada p{
+	width: 98%;
+	max-width: 640px;
+	display: inline-block;
+	color: rgba(255,255,255,0.82);
+	margin-top: 16px;
+	font-size: 1.05rem;
+}
+
+.btn-chamada{
+	display: inline-block;
+	margin-top: 32px;
+	padding: 14px 34px;
+	border-radius: var(--raio-sm);
+	background-color: var(--cor-destaque);
+	color: var(--cor-primaria-escura);
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	font-size: 0.9rem;
+	transition: background-color var(--transicao), transform var(--transicao), box-shadow var(--transicao);
+}
+
+.btn-chamada:hover{
+	background-color: #fff;
+	color: var(--cor-primaria);
+	transform: translateY(-2px);
+	box-shadow: 0 10px 24px rgba(0,0,0,0.22);
 }
 /******/
