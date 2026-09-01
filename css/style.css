@@ -64,6 +64,7 @@ h1,h2,h3{
 	font-weight: 600;
 	line-height: 1.2;
 	color: var(--cor-primaria);
+	text-wrap: balance;
 }
 
 h1{
@@ -187,7 +188,7 @@ header .container{
 	width: 100%;
 }
 
-.menu-cta{
+.menu a.menu-cta{
 	padding: 12px 22px;
 	border-radius: var(--raio-sm);
 	background-color: var(--cor-primaria);
@@ -195,7 +196,7 @@ header .container{
 	transition: background-color var(--transicao), transform var(--transicao);
 }
 
-.menu-cta:hover{
+.menu a.menu-cta:hover{
 	background-color: var(--cor-destaque-escura);
 	color: #fff;
 	transform: translateY(-2px);
@@ -248,7 +249,7 @@ section.cover-form{
 }
 
 .cover-texto{
-	max-width: 460px;
+	max-width: 560px;
 	color: #fff;
 }
 
