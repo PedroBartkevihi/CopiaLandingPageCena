@@ -99,3 +99,123 @@ p{
 	padding: 0 24px;
 }
 /******/
+
+
+/**Header e menu!*/
+header{
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background-color: var(--cor-fundo);
+	border-bottom: 1px solid var(--cor-borda);
+	transition: box-shadow var(--transicao);
+}
+
+header.rolagem{
+	box-shadow: var(--sombra-suave);
+}
+
+header .container{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.logo{
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.logo-2{
+	display: block;
+	width: 150px;
+	height: 46px;
+	background-image: url('../imagens/logo2.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+.logo-1{
+	display: block;
+	width: 104px;
+	height: 40px;
+	padding-left: 16px;
+	border-left: 1px solid var(--cor-borda);
+	background-image: url('../imagens/logo1.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 0.85;
+}
+
+.menu{
+	display: flex;
+	align-items: center;
+	gap: 32px;
+	list-style: none;
+}
+
+.menu a{
+	position: relative;
+	color: var(--cor-texto);
+	font-size: 0.95rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+}
+
+.menu a:not(.menu-cta)::after{
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	width: 0;
+	height: 2px;
+	background-color: var(--cor-destaque);
+	transition: width var(--transicao);
+}
+
+.menu a:not(.menu-cta):hover{
+	color: var(--cor-primaria);
+}
+
+.menu a:not(.menu-cta):hover::after{
+	width: 100%;
+}
+
+.menu-cta{
+	padding: 12px 22px;
+	border-radius: var(--raio-sm);
+	background-color: var(--cor-primaria);
+	color: #fff;
+	transition: background-color var(--transicao), transform var(--transicao);
+}
+
+.menu-cta:hover{
+	background-color: var(--cor-destaque-escura);
+	color: #fff;
+	transform: translateY(-2px);
+}
+
+.menu-toggle{
+	display: none;
+	width: 44px;
+	height: 44px;
+	padding: 10px;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+.menu-toggle span{
+	display: block;
+	width: 100%;
+	height: 2px;
+	margin: 5px 0;
+	background-color: var(--cor-primaria);
+	transition: transform var(--transicao), opacity var(--transicao);
+}
+/******/
