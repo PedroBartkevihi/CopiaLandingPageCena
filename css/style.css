@@ -578,6 +578,18 @@ input:focus-visible,
 	opacity: 1;
 }
 
+/* revelacao dos blocos ao rolar (classe .visivel via JS) */
+[data-revelar]{
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-revelar].visivel{
+	opacity: 1;
+	transform: none;
+}
+
 /* respeita quem prefere menos animacao */
 @media (prefers-reduced-motion: reduce){
 	html{
@@ -590,6 +602,11 @@ input:focus-visible,
 		animation-duration: 0.001ms !important;
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.001ms !important;
+	}
+
+	[data-revelar]{
+		opacity: 1;
+		transform: none;
 	}
 }
 /******/
