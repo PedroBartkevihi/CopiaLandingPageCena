@@ -593,3 +593,165 @@ input:focus-visible,
 	}
 }
 /******/
+
+
+/**Responsividade!*/
+@media screen and (max-width: 1024px){
+
+	.bg{
+		min-height: auto;
+		padding: 64px 0;
+		background-image:
+			linear-gradient(rgba(7,42,58,0.78), rgba(7,42,58,0.78)),
+			url('../imagens/bg-form.jpg');
+	}
+
+	.bg .container{
+		flex-direction: column;
+		align-items: center;
+		gap: 36px;
+		text-align: center;
+	}
+
+	.cover-texto{
+		max-width: 640px;
+	}
+
+	.form-container{
+		width: 100%;
+		max-width: 480px;
+		text-align: left;
+	}
+}
+
+@media screen and (max-width: 880px){
+
+	.menu-toggle{
+		display: block;
+		z-index: 2;
+	}
+
+	.menu-principal{
+		position: relative;
+	}
+
+	.menu{
+		position: absolute;
+		top: calc(100% + 16px);
+		right: 0;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 4px;
+		width: min(300px, 78vw);
+		padding: 12px;
+		border: 1px solid var(--cor-borda);
+		border-radius: var(--raio);
+		background-color: var(--cor-fundo);
+		box-shadow: var(--sombra);
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-10px);
+		transition: opacity var(--transicao), transform var(--transicao), visibility var(--transicao);
+	}
+
+	.menu.aberto{
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+
+	.menu li{
+		width: 100%;
+	}
+
+	.menu a{
+		display: block;
+		padding: 12px 14px;
+		border-radius: var(--raio-sm);
+	}
+
+	.menu a:not(.menu-cta)::after{
+		display: none;
+	}
+
+	.menu a:not(.menu-cta):hover{
+		background-color: var(--cor-fundo-alt);
+	}
+
+	.menu a.menu-cta{
+		text-align: center;
+		margin-top: 4px;
+	}
+
+	/* transforma o botao em "x" quando o menu esta aberto */
+	.menu-toggle.ativo span:nth-child(1){
+		transform: translateY(7px) rotate(45deg);
+	}
+
+	.menu-toggle.ativo span:nth-child(2){
+		opacity: 0;
+	}
+
+	.menu-toggle.ativo span:nth-child(3){
+		transform: translateY(-7px) rotate(-45deg);
+	}
+}
+
+@media screen and (max-width: 768px){
+
+	.flex-mosaico,
+	.flex-mosaico.invertido{
+		flex-direction: column;
+	}
+
+	.item-1-mosaico,
+	.flex-mosaico.invertido .item-1-mosaico{
+		order: 0;
+		width: 100%;
+		min-height: 260px;
+	}
+
+	.item-2-mosaico{
+		width: 100%;
+		text-align: left;
+	}
+}
+
+@media screen and (max-width: 560px){
+
+	.container{
+		padding: 0 18px;
+	}
+
+	header .container{
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+
+	.logo-2{
+		width: 128px;
+		height: 40px;
+	}
+
+	.logo-1{
+		width: 88px;
+		padding-left: 12px;
+	}
+
+	.form-container form,
+	.form-container h2{
+		padding: 20px;
+	}
+
+	.footer-menu{
+		gap: 10px 18px;
+	}
+}
+
+@media screen and (max-width: 400px){
+
+	.logo-1{
+		display: none;
+	}
+}
+/******/
